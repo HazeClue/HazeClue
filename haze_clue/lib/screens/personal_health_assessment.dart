@@ -126,13 +126,13 @@ class _PersonalHealthAssessmentState extends State<PersonalHealthAssessment> {
                     onPageChanged: (index) =>
                         setState(() => _currentStep = index + 1),
                     children: [
-                      _buildStep1(),
-                      _buildStep2(),
-                      _buildStep3(),
-                      _buildStep4(),
-                      _buildStep5(),
-                      _buildStep6(),
-                      _buildStep7(),
+                      SingleChildScrollView(child: _buildStep1()),
+                      SingleChildScrollView(child: _buildStep2()),
+                      SingleChildScrollView(child: _buildStep3()),
+                      _buildStep4(), // Step 4 already has a SingleChildScrollView
+                      SingleChildScrollView(child: _buildStep5()),
+                      SingleChildScrollView(child: _buildStep6()),
+                      SingleChildScrollView(child: _buildStep7()),
                     ],
                   ),
                 ),
