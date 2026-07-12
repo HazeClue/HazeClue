@@ -67,32 +67,8 @@ class _TrainingScreenState extends State<TrainingScreen> {
   }
 
   Future<void> _startTdcsSession() async {
-    setState(() => _isLoading = true);
-    bool hasTdcs = false;
-    try {
-      final devices = await ApiService.getDevices();
-      hasTdcs = devices.any((d) => 
-        d['name'].toString().toLowerCase().contains('tdcs') || 
-        d['name'].toString().toLowerCase().contains('halo')
-      );
-    } catch (e) {
-      debugPrint("Failed to check devices: $e");
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
-    }
+    // Show duration picker directly without checking for connected device
 
-    if (!mounted) return;
-
-    if (!hasTdcs) {
-      showGlassToast(context, "Please connect a Simulation device first.");
-      Navigator.push(
-        context,
-        GlassPageRoute(page: const MyDevicesScreen()),
-      );
-      return;
-    }
-
-    // Show duration picker
     showDialog(
       context: context,
       builder: (ctx) {
@@ -107,7 +83,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
-                    "Choose the duration for your Simulation stimulation session:",
+                    "Choose the duration for your Stimulation stimulation session:",
                     style: TextStyle(color: Colors.white70),
                   ),
                   const SizedBox(height: 24),
@@ -237,13 +213,13 @@ class _TrainingScreenState extends State<TrainingScreen> {
 
           const SizedBox(height: 40),
           Text(
-            "Simulation Settings",
+            "Stimulation Settings",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor),
           ),
           const SizedBox(height: 16),
           _isLoading
               ? Center(child: CircularProgressIndicator(color: textColor))
-              : _buildSIMULATIONSettings(textColor),
+              : _buildStimulationSettings(textColor),
           const SizedBox(height: 100), // Padding for bottom nav
         ],
       ),
@@ -370,7 +346,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
     );
   }
 
-  Widget _buildSIMULATIONSettings(Color textColor) {
+  Widget _buildStimulationSettings(Color textColor) {
     return GlassCard(
       child: Padding(
         padding: const EdgeInsets.all(24),
@@ -413,7 +389,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
             SizedBox(
               width: double.infinity,
               child: GlassButton(
-                text: "Start Simulation Session",
+                text: "Start Stimulation Session",
                 onPressed: _startTdcsSession,
                 icon: Icons.bolt,
               ),

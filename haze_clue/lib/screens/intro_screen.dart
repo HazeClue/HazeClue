@@ -28,7 +28,7 @@ class _IntroScreenState extends State<IntroScreen> {
     {
       'image': 'assets/images/Intro2.png',
       'title': "Personalized Stimulation\nFor Peak Performance",
-      'desc': "Adaptive SIMULATION and binaural beats tailored to your brain's activity.",
+      'desc': "Adaptive STIMULATION and binaural beats tailored to your brain's activity.",
     },
   ];
 

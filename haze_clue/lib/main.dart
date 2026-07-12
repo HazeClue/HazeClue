@@ -37,7 +37,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize ONNX Runtime
-  await OrtEnv.instance.init();
+  OrtEnv.instance.init();
 
 
   // Load saved theme preference

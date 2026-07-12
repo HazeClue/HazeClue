@@ -355,7 +355,7 @@ class ApiService {
       body: jsonEncode(data),
     );
     if (res.statusCode != 200 && res.statusCode != 201) {
-      throw Exception('Failed to submit SIMULATION consent');
+      throw Exception('Failed to submit STIMULATION consent');
     }
   }
 

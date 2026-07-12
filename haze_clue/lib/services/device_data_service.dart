@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
-/// A service that simulates reading live EEG/Simulation data from a Bluetooth headset.
+/// A service that simulates reading live EEG/Stimulation data from a Bluetooth headset.
 /// Once the real hardware is available, replace the Timer logic with actual Bluetooth characteristic reads.
 class DeviceDataService {
   Timer? _timer;

@@ -59,7 +59,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Simulation Consent",
+          "Stimulation Consent",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
               children: [
                 // --- Intro Section ---
                 const Text(
-                  "Understanding Simulation",
+                  "Understanding Stimulation",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -85,13 +85,13 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
                 ),
                 const SizedBox(height: 12),
                 _buildParagraph(
-                  "Simulation is a non-invasive brain stimulation method that uses a low-level, constant electrical current to stimulate specific brain areas.",
+                  "Stimulation is a non-invasive brain stimulation method that uses a low-level, constant electrical current to stimulate specific brain areas.",
                 ),
                 _buildParagraph(
-                  "When used with HazeClue, Simulation aims to enhance cognitive functions such as focus, attention, and learning, helping you achieve peak mental performance in your gamified challenges. The effects are typically subtle and cumulative.",
+                  "When used with HazeClue, Stimulation aims to enhance cognitive functions such as focus, attention, and learning, helping you achieve peak mental performance in your gamified challenges. The effects are typically subtle and cumulative.",
                 ),
                 _buildParagraph(
-                  "It is important to use Simulation responsibly and according to guidelines. Your safety is our top priority.",
+                  "It is important to use Stimulation responsibly and according to guidelines. Your safety is our top priority.",
                 ),
                 const SizedBox(height: 32),
 
@@ -106,7 +106,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
                 ),
                 const SizedBox(height: 8),
                 _buildParagraph(
-                  "Before activating Simulation, please confirm the following to ensure safe and effective use.",
+                  "Before activating Stimulation, please confirm the following to ensure safe and effective use.",
                 ),
                 const SizedBox(height: 16),
 
@@ -119,14 +119,14 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
                           index: 0,
                           title: "I have consulted a medical professional",
                           subtitle:
-                              "Ensure Simulation is suitable for your individual health conditions.",
+                              "Ensure Stimulation is suitable for your individual health conditions.",
                         ),
                         _buildChecklistItem(
                           index: 1,
                           title:
                               "I have no metallic implants or electronic devices in my head/body",
                           subtitle:
-                              "Such devices can interfere with Simulation, posing safety risks.",
+                              "Such devices can interfere with Stimulation, posing safety risks.",
                         ),
                         _buildChecklistItem(
                           index: 2,
@@ -139,7 +139,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
                           index: 3,
                           title: "I am not pregnant or breastfeeding",
                           subtitle:
-                              "Simulation safety during pregnancy/breastfeeding is not established.",
+                              "Stimulation safety during pregnancy/breastfeeding is not established.",
                         ),
                         _buildChecklistItem(
                           index: 4,
@@ -156,7 +156,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
 
                 // --- Presets Section ---
                 const Text(
-                  "Simulation Intensity Presets",
+                  "Stimulation Intensity Presets",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -197,7 +197,7 @@ class _TdcsConsentScreenState extends State<TdcsConsentScreen> {
                     : Column(
                         children: [
                           GlassButton(
-                            text: "Activate Simulation & Continue",
+                            text: "Activate Stimulation & Continue",
                             onPressed: () => _submitConsent(true),
                           ),
                           const SizedBox(height: 16),

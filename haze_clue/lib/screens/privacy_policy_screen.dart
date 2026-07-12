@@ -61,7 +61,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                     _buildSection(
                       title: "3. Disclosure of your personal data",
                       content:
-                          "We do not share your personal data with third parties unless required to maintain core app functionality or when you explicitly choose to enable optional features such as adaptive Simulation.\n"
+                          "We do not share your personal data with third parties unless required to maintain core app functionality or when you explicitly choose to enable optional features such as adaptive Stimulation.\n"
                           "All data is processed with strict client-side safety controls to ensure full protection and transparency.",
                       textColor: textColor,
                     ),

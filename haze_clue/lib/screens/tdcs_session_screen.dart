@@ -115,7 +115,7 @@ class _TdcsSessionScreenState extends State<TdcsSessionScreen>
     try {
       // Save session to backend
       final sessionData = await ApiService.createSession(
-        "Simulation Stimulation",
+        "Stimulation Stimulation",
         widget.durationMinutes,
         null,
       );
@@ -148,7 +148,7 @@ class _TdcsSessionScreenState extends State<TdcsSessionScreen>
           style: TextStyle(color: Colors.white),
         ),
         content: const Text(
-          "Are you sure you want to stop the Simulation stimulation early?",
+          "Are you sure you want to stop the Stimulation stimulation early?",
           style: TextStyle(color: Colors.white70),
         ),
         actions: [
@@ -199,7 +199,7 @@ class _TdcsSessionScreenState extends State<TdcsSessionScreen>
         elevation: 0,
         leading: BackButton(color: textColor),
         title: Text(
-          "Simulation Session",
+          "Stimulation Session",
           style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

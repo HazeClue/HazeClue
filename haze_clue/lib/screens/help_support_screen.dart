@@ -95,27 +95,27 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
                         ),
                         _buildDivider(textColor),
                         _buildFAQCategory(
-                          title: "Simulation & Cognitive Training",
+                          title: "Stimulation & Cognitive Training",
                           count: "3",
                           initiallyExpanded: false,
                           textColor: textColor,
                           children: [
                             _buildFAQItem(
-                              question: "What is Simulation and is it safe?",
+                              question: "What is Stimulation and is it safe?",
                               answer:
-                                  "Cognitive Simulation (Simulation) delivers a mild, safe electrical current to stimulate specific brain areas. HazeClue strictly enforces safe intensity limits (max 2mA).",
+                                  "Cognitive Stimulation (Stimulation) delivers a mild, safe electrical current to stimulate specific brain areas. HazeClue strictly enforces safe intensity limits (max 2mA).",
                               textColor: textColor,
                             ),
                             _buildFAQItem(
-                              question: "How often should I run Simulation sessions?",
+                              question: "How often should I run Stimulation sessions?",
                               answer:
                                   "We recommend starting with 2-3 sessions per week, with each session lasting between 10 to 20 minutes, depending on the cognitive training module you select.",
                               textColor: textColor,
                             ),
                             _buildFAQItem(
-                              question: "Can I use Binaural Beats with Simulation?",
+                              question: "Can I use Binaural Beats with Stimulation?",
                               answer:
-                                  "Absolutely! Combining our Binaural Beats presets with Simulation can synergistically enhance either relaxation or focus, depending on the frequencies selected.",
+                                  "Absolutely! Combining our Binaural Beats presets with Stimulation can synergistically enhance either relaxation or focus, depending on the frequencies selected.",
                               textColor: textColor,
                             ),
                           ],

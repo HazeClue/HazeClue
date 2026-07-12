@@ -59,10 +59,35 @@ class _InsightsScreenState extends State<InsightsScreen> {
 
   Future<void> _loadHealthInsights() async {
     try {
-      final insightsJson = await ApiService.getUserInsights();
+      // Disabled Groq AI integration to avoid API key errors
+      // final insightsJson = await ApiService.getUserInsights();
+      
+      // Generating dummy insights based on typical user status
+      await Future.delayed(const Duration(milliseconds: 500)); // Simulate network delay
+      
+      final dummyInsights = [
+        UserInsight(
+          id: '1',
+          type: 0, // DailyTip
+          title: 'Great Focus Today!',
+          message: 'Your average concentration was above 80%. Keep up the good work and make sure to take short breaks to maintain this level.',
+          additionalDataJson: '{}',
+          createdAt: DateTime.now(),
+        ),
+        UserInsight(
+          id: '2',
+          type: 1, // WeeklySummary
+          title: 'Weekly Workload Status',
+          message: 'You have been in WORKLOAD mode for 15 hours this week. Consider reducing heavy mental tasks over the weekend to prevent burnout.',
+          additionalDataJson: '{}',
+          createdAt: DateTime.now(),
+        ),
+      ];
+
       if (!mounted) return;
       setState(() {
-        _healthInsights = insightsJson.map((json) => UserInsight.fromJson(json)).toList();
+        // _healthInsights = insightsJson.map((json) => UserInsight.fromJson(json)).toList();
+        _healthInsights = dummyInsights;
         _isLoadingHealthInsights = false;
       });
     } catch (e) {

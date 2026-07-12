@@ -14,7 +14,7 @@ class MyDevicesScreen extends ConsumerStatefulWidget {
 
 class _MyDevicesScreenState extends ConsumerState<MyDevicesScreen> {
   int _selectedCategory = 0;
-  final List<String> _categories = ["All", "EEG", "Smartwatch", "Simulation"];
+  final List<String> _categories = ["All", "EEG", "Smartwatch", "Stimulation"];
   late Future<List<dynamic>> _devicesFuture;
   
   bool _isScanning = false;
@@ -52,7 +52,7 @@ class _MyDevicesScreenState extends ConsumerState<MyDevicesScreen> {
           _scannedDevices = [
             {"name": "Muse S (Gen 2)", "mac": "00:11:22:33:44:55"},
             {"name": "NeuroSky MindWave", "mac": "AA:BB:CC:DD:EE:FF"},
-            {"name": "Halo Sport (Simulation)", "mac": "11:22:33:44:55:66"},
+            {"name": "Halo Sport (Stimulation)", "mac": "11:22:33:44:55:66"},
           ];
         });
       }
