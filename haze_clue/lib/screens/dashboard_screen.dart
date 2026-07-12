@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'dart:math';
 import 'my_devices_screen.dart';
 import 'training_screen.dart';
 import 'notification_inbox_screen.dart';
-import '../services/onnx_local_inference_service.dart';
 import '../providers/dashboard_provider.dart';
 import '../widgets/glass_widgets.dart';
 import '../widgets/shimmer_loading.dart';
@@ -12,23 +10,6 @@ import '../utils/transitions.dart';
 
 class DashboardContent extends ConsumerWidget {
   const DashboardContent({super.key});
-
-  Future<void> _testOnnxModel(BuildContext context) async {
-    showGlassToast(context, "Running ONNX Inference...");
-    try {
-      final onnxService = OnnxLocalInferenceService();
-      await onnxService.init();
-      final dummyData = List.generate(256, (_) => List.generate(14, (_) => Random().nextDouble()));
-      final result = await onnxService.getFocusPrediction(dummyData);
-      if (result != null) {
-        showGlassToast(context, "ONNX Success: ${result.mode} (${(result.probability * 100).toStringAsFixed(1)}%)");
-      } else {
-        showGlassToast(context, "ONNX failed to return a result");
-      }
-    } catch (e) {
-      showGlassToast(context, "ONNX Error: $e");
-    }
-  }
 
   Future<void> _onRefresh(WidgetRef ref) async {
     ref.invalidate(dashboardStatsProvider);
@@ -454,12 +435,6 @@ class DashboardContent extends ConsumerWidget {
               GlassPageRoute(page: const TrainingScreen()),
             );
           },
-        ),
-        _actionItem(
-          Icons.science_outlined,
-          "Test\nONNX",
-          textColor,
-          onTap: () => _testOnnxModel(context),
         ),
       ],
     );
